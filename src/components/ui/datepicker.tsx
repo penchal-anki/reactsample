@@ -47,7 +47,7 @@ export interface DatePickerProps<selectsRange extends boolean | undefined>
 export const DatePicker = ({
   customInput,
   showPopperArrow = false,
-  dateFormat = 'd MMMM yyyy',
+  dateFormat = "MMM ` yy",
   selectsRange = false,
   onCalendarOpen,
   onCalendarClose,
@@ -69,15 +69,15 @@ export const DatePicker = ({
         customInput={
           customInput || (
             <Input
-              prefix={<PiCalendarBlank className="h-5 w-5 text-gray-500" />}
-              suffix={
-                <PiCaretDownBold
-                  className={cn(
-                    'h-4 w-4 text-gray-500 transition',
-                    isCalenderOpen && 'rotate-180'
-                  )}
-                />
-              }
+              // prefix={<PiCalendarBlank className="h-5 w-5 text-gray-500" />}
+              // suffix={
+              //   <PiCaretDownBold
+              //     className={cn(
+              //       'h-4 w-4 text-gray-500 transition',
+              //       isCalenderOpen && 'rotate-180'
+              //     )}
+              //   />
+              // }
               {...inputProps}
             />
           )

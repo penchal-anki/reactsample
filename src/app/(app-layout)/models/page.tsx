@@ -83,7 +83,7 @@ export default function Models() {
         });
 
         const cachedModelsList = appContextData?.modelsListInfo || [];
-        setModelsList(cachedModelsList?.length > 0 ? cachedModelsList : modelsListInfo);
+        setModelsList( modelsListInfo);
         setIsFirstTimeLoad(true)
         setIsDataLoading(false)
         if (cachedModelsList?.length === 0) {

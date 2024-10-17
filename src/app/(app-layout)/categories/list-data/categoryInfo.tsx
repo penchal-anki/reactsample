@@ -39,6 +39,7 @@ const CategoryInfo = (props: any) => {
             <div className='mt-8'>
                 <GettingStartedSample
                     listRows={record.categoryListValues}
+                    selectedRecord={record}
                 />
             </div>
 

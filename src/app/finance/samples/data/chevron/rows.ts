@@ -30,34 +30,59 @@ export const headerRow: Row = {
   ]
 };
 
-export const rows = (reorderable: boolean) => {
-  const seventyFiveRows = Array.from({ length: 75 }).map((i: any,index) => {
-    const rowString = index + 1
+
+export const rows = (monthsList: any) => {
+  const monthsCount = monthsList?.length || 12;
+
+  const cellsByMonth = Array.from({ length: monthsCount }).map(() => {
+    return { type: "text", text: "-" };
+  });
+
+  const seventyFiveRows = Array.from({ length: 75 }).map((i: any, index) => {
+    const rowString = index + 1;
     return {
       rowId: Number(rowString),
       height,
-      reorderable,
-      cells: [
-        { type: 'chevron', text: '', isExpanded: true },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-        { type: 'text', text: '' },
-      ]
-    }
-  })
+      reorderable: true,
+      cells: [{ type: "chevron", text: "", isExpanded: true }, ...cellsByMonth],
+    };
+  });
+  return seventyFiveRows;
+};
 
-  return seventyFiveRows
-}
+
+
+
+
+
+// export const rows = (reorderable: boolean) => {
+//   const seventyFiveRows = Array.from({ length: 75 }).map((i: any,index) => {
+//     const rowString = index + 1
+//     return {
+//       rowId: Number(rowString),
+//       height,
+//       reorderable,
+//       cells: [
+//         { type: 'chevron', text: '', isExpanded: true },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//         { type: 'text', text: '-' },
+//       ]
+//     }
+//   })
+
+//   return seventyFiveRows
+// }
 
 //  [
 // {
